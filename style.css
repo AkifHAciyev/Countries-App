@@ -1,17 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
 	background-color: rgb(212, 212, 212);
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin: 50px 50px;
 }
 
 .container {
 	display: grid;
 	grid-template-columns: auto auto auto auto;
-	grid-gap: 40px;
-	margin-left: 50px;
-	margin-top: 50px;
+	grid-gap: 50px;
 }
 
-.select {
-	background-color: #fff;
+.header {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+	margin-bottom: 50px;
 }
 
 .input {
@@ -21,22 +33,31 @@ body {
 	border-radius: 5px;
 }
 
+.select {
+	background-color: #fff;
+	padding: 9px;
+	border: none;
+	border-radius: 5px;
+}
+
 .box {
 	width: 200px;
-	height: 350px;
+	height: 320px;
 	background-color: #fff;
 	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 0 #0e0e0e;
+	color: #0e0e0e;
+	transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.box:hover {
+	box-shadow: inset 220px 0 0 0 #0e0e0e;
+	color: white;
 }
 
 .textBox {
 	margin-left: 20px;
-}
-
-.header {
-	margin-left: 50px;
-	margin-top: 100px;
-	display: flex;
-	justify-content: space-between;
 }
 
 .img {
@@ -45,6 +66,85 @@ body {
 	height: 150px;
 }
 
+h2 {
+	margin: 10px 0;
+}
+
+p {
+	margin-bottom: 5px;
+}
+
 span {
 	color: rgb(105, 104, 104);
+}
+
+/* detail */
+
+.detail_container {
+	margin-top: 80px;
+	display: flex;
+}
+
+.imgDiv img {
+	height: 400px;
+	width: 500px;
+}
+
+.btnBack {
+	border: 1px solid #0e0e0e;
+	padding: 5px 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #0e0e0e;
+}
+
+.btnBack:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.fa {
+	margin-right: 5px;
+}
+
+.info_box {
+	margin-top: 40px;
+	margin-left: 100px;
+}
+
+.information_Box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title {
+	margin-bottom: 40px;
+}
+
+.p {
+	font-size: 18px;
+}
+
+.info_Box-right {
+	margin-left: 130px;
+	margin-top: 77px;
+}
+
+.borderDiv {
+	margin-top: 70px;
+}
+
+.borderDiv button {
+	background-color: rgb(212, 212, 212);
+	font-size: 16px;
+	color: rgb(105, 104, 104);
+	padding: 3px 12px;
+	border-radius: 5px;
+	border: 1px solid #f2f2f2;
+	cursor: pointer;
+}
+
+.borderDiv button:hover {
+	background-color: #000;
+	color: #fff;
 }
