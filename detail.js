@@ -1,5 +1,5 @@
 const FULL_Name_URL = 'https://restcountries.com/v3.1/name/';
-const btnBack = document.querySelector('#btnBack');
+const Border_URL = 'https://restcountries.com/v3.1/alpha/';
 const detailContainer = document.querySelector('.detail_container');
 let countryName = JSON.parse(localStorage.getItem('countryName'));
 
@@ -10,7 +10,14 @@ function addClickCountry() {
 		console.log(res.data);
 		res.data.forEach((element) => {
 			let nativeName = Object.entries(element.name.nativeName)[0][1].common;
-			console.log(nativeName);
+			let currencies = Object.entries(element.currencies)[0][0];
+			let languages = Object.entries(element.languages)[0][1];
+
+			let createBtn = document.createElement('button');
+			let borders = element.borders.map((e) => e);
+			createBtn.innerHTML += `${borders}`;
+			console.log(createBtn);
+
 			detailContainer.innerHTML += `
 			<div class="imgDiv">
 				<img
@@ -31,16 +38,18 @@ function addClickCountry() {
 					</div>
 					<div class="info_Box-right">
 						<p class="p">Top Level Domain: <span>${element?.tld[0]}</span></p>
-						<p class="p">Currencies: <span>${element?.currencies?.MRU?.name}</span></p>
-						<p class="p">Languages: <span>${element?.languages?.ara}</span></p>
+						<p class="p">Currencies: <span>${currencies}</span></p>
+						<p class="p">Languages: <span>${languages}</span></p>
 					</div>
 				</div>
 				<div class="borderDiv">
-					<p class="p">Border Countries: <button>france</button></p>
+				<p class="p">Border Countries: ${createBtn}</button>
 				</div>
 		</div>`;
 		});
 	});
 }
+
+function borderAdd() {}
 
 addClickCountry();
